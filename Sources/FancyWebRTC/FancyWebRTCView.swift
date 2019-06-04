@@ -16,7 +16,7 @@ import WebRTC
         let w = self.videoView!.bounds.height * size.width / size.height
         let h = self.videoView!.bounds.height
         let x = (w - self.videoView!.bounds.width) / 2
-        self.videoView!.frame = CGRect(-x, 0, w, h)
+        self.videoView!.frame = CGRect(x:-x,y:0, width:w, height:h)
     }
     
     private var videoView: RTCEAGLVideoView?
