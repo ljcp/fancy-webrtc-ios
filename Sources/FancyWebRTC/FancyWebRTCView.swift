@@ -13,9 +13,9 @@ import WebRTC
 @objcMembers public class FancyWebRTCView: UIView, RTCVideoViewDelegate{
     
     public func videoView(_ videoView: RTCVideoRenderer, didChangeVideoSize size: CGSize) {
-            self._remoteVideoSize = size;
+            self._remoteVideoSize! = size;
     }
-    private var _remoteVideoSize: CGSize
+    private var _remoteVideoSize: CGSize?
     private var videoView: RTCEAGLVideoView?
     private var mirror: Bool = false
     private var track: RTCVideoTrack?
@@ -84,8 +84,8 @@ import WebRTC
         if(self.videoView != nil){
             //self.videoView!.frame = self.bounds
             
-            if (self._remoteVideoSize.width > 0 && self._remoteVideoSize.height > 0) {
-                        let w = self.videoView!.bounds.height * self._remoteVideoSize.width / self._remoteVideoSize.height
+            if (self._remoteVideoSize!.width > 0 && self._remoteVideoSize!.height > 0) {
+                        let w = self.videoView!.bounds.height * self._remoteVideoSize!.width / self._remoteVideoSize!.height
                         let h = self.videoView!.bounds.height
                         let x = (w - self.videoView!.bounds.width) / 2
                         self.videoView!.frame = CGRect(x:-x,y:0, width:w, height:h)
