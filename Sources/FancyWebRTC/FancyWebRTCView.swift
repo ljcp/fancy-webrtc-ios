@@ -13,9 +13,7 @@ import WebRTC
 @objcMembers public class FancyWebRTCView: UIView, RTCVideoViewDelegate{
     
     public func videoView(_ videoView: RTCVideoRenderer, didChangeVideoSize size: CGSize) {
-          if (self.videoView == videoView) {
             self._remoteVideoSize = size;
-           }
     }
     private var _remoteVideoSize: CGSize
     private var videoView: RTCEAGLVideoView?
