@@ -84,9 +84,9 @@ import WebRTC
     
     public override func layoutSubviews() {
         if(self.videoView != nil){
-            //self.videoView!.frame = self.bounds
+            self.videoView!.frame = self.bounds
             
-            if let rvs = self._remoteVideoSize {
+            /**if let rvs = self._remoteVideoSize {
                 print("Contains something")
                 if (rvs.width > 0 && rvs.height > 0) {
                             let w = self.videoView!.bounds.height * rvs.width / rvs.height
@@ -97,7 +97,7 @@ import WebRTC
                 
             } else {
                 print("Doesn’t contain a number")
-            }
+            }*/
             
 
             
